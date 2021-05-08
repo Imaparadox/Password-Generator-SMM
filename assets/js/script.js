@@ -20,6 +20,12 @@ function getPasswordOptions() {
     var confirmLength = parseInt(prompt("Choose a password length between 8 and 128 characters"));
   };
 
+  //Password Choosing Characters (Declare the variables)
+  var confirmUpperCase = confirm("Do you want upper-case letters?");
+  var confirmLowerCase = confirm("Do you want lower-case letters?");
+  var confirmNumbers = confirm("Do you want numbers?");
+  var confirmSpecialCase = confirm("Do you want any special characters?");
+  
 
 };
 
