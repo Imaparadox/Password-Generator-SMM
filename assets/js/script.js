@@ -9,8 +9,17 @@ var specialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", 
 
 //WHEN prompted for password criteria
 //THEN I select which criteria to include in the password
-//Selects
+//Function that stores user input
 function getPasswordOptions() {
+  //Password length prompt
+  var confirmLength = parseInt(prompt("Choose a password length between 8 and 128 characters")); //Set a prompt to confirm length
+  while (confirmLength < 8 ||
+    confirmLength > 128 ||
+    isNaN(parseInt(confirmLength))) {
+    alert("Please choose a number between 8-128");
+    var confirmLength = parseInt(prompt("Choose a password length between 8 and 128 characters"));
+  };
+
 
 };
 
