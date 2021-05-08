@@ -25,10 +25,22 @@ function getPasswordOptions() {
   var confirmLowerCase = confirm("Do you want lower-case letters?");
   var confirmNumbers = confirm("Do you want numbers?");
   var confirmSpecialCase = confirm("Do you want any special characters?");
-  
+
+  //While loop that confirms our characters
+  while (confirmUpperCase === false &&
+    confirmLowerCase === false &&
+    confirmNumbers === false &&
+    confirmSpecialCase === false) {
+    alert("Please choose a character for your password");
+    var confirmUpperCase = confirm("Do you want upper-case letters?");
+    var confirmLowerCase = confirm("Do you want lower-case letters?");
+    var confirmNumbers = confirm("Do you want numbers?");
+    var confirmSpecialCase = confirm("Do you want any special characters?");
+    return;
+  };
+
 
 };
-
 //WHEN prompted for the length of the password
 //THEN I choose a length of at least 8 characters and no more than 128 characters
 
