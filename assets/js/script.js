@@ -77,9 +77,18 @@ function generatePassword() {
     characters.push(getRandomElement(specialCharacters));
   };
 
+  //for loop that will generate the random password based off our choices in the prompts above
+  for (var i = 0; i < pwdOptions.length; i++) {
+    var possibleChar = getRandomElement(possibleCharacters);
+    newPasswordArray.push(possibleChar);
+  };
+  for (var i = 0; i < characters.length; i++) {
+    newPasswordArray[i] = characters[i];
+  };
+  return newPasswordArray.join("");
 };
 
-// Assignment Code
+// QuerySelector for the generate button
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
