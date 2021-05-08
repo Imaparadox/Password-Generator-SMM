@@ -52,20 +52,32 @@ function getRandomElement(array) {
   return element;
 };
 
-//WHEN prompted for the length of the password
-//THEN I choose a length of at least 8 characters and no more than 128 characters
+// Function that generates the password
+function generatePassword() {
+  var pwdOptions = getPasswordOptions();
+  var newPasswordArray = [];
+  var possibleCharacters = [];
+  var characters = [];
 
-//WHEN prompted for character types to include in the password
-//THEN I choose lowercase, uppercase, numeric, and/or special characters
+  //if statements that concat the possible characters, then push them to getRandomElement()
+  if (pwdOptions.upperCase) {
+    possibleCharacters = possibleCharacters.concat(upperCase);
+    characters.push(getRandomElement(upperCase));
+  };
+  if (pwdOptions.lowercase) {
+    possibleCharacters = possibleCharacters.concat(lowerCase);
+    characters.push(getRandomElement(lowerCase));
+  };
+  if (pwdOptions.numbers) {
+    possibleCharacters = possibleCharacters.concat(numbers);
+    characters.push(getRandomElement(numbers));
+  };
+  if (pwdOptions.special) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+    characters.push(getRandomElement(specialCharacters));
+  };
 
-//WHEN I answer each prompt
-//THEN my input should be validated and at least one character type should be selected
-
-//WHEN all prompts are answered
-//THEN a password is generated that matches the selected criteria
-
-//WHEN the password is generated
-//THEN the password is either displayed in an alert or written to the page
+};
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
