@@ -39,7 +39,15 @@ function getPasswordOptions() {
     return;
   };
 
-
+  //Object to store user inputs
+  var passwordOptions = {
+    length: confirmLength,
+    upperCase: confirmUpperCase,
+    lowercase: confirmLowerCase,
+    numbers: confirmNumbers,
+    special: confirmSpecialCase
+  };
+  return passwordOptions;
 };
 //WHEN prompted for the length of the password
 //THEN I choose a length of at least 8 characters and no more than 128 characters
